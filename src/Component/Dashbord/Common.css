@@ -1,0 +1,43 @@
+.accordion-div{
+    width:15%;
+    height:auto;
+    /* background-color:aqua; */
+    padding:15px 20px;
+    display:inline-block;
+   vertical-align:text-top;
+}
+.contai{
+    width:80%;
+    /* background-color: yellow; */
+    box-sizing: border-box;
+    display: inline-block;
+    vertical-align:text-top;
+}
+.contai > .addbtndiv{
+    width:100%;
+    height: auto;
+    /* background-color: rgb(36, 14, 159); */
+    text-align: end;
+    
+}
+#btn{
+    width:25%;
+    height:40px;
+    margin-left:2px;
+    border-radius:5px;
+    cursor: pointer;
+    background-color: blue;
+    color: #fff;
+    font-size:18px;
+
+}
+#addbtn{
+    width:10%;
+    height:40px;
+    margin-top:10px;
+    margin-bottom:15px;
+    border-radius:5px;
+    cursor: pointer;
+    font-size:18px;
+    color: blue;
+}
