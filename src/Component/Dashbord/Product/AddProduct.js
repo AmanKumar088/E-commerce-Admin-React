@@ -6,19 +6,29 @@ import AddProductApi from "../../../Api/ProductApi";
 export default function AddProduct(){
     const [data,SetData]=useState({})
     const naviget=useNavigate()
+
     const handlechange=(event)=>{
         SetData({...data,[event.target.name]:event.target.value})
     }
 
+  const handlechangeFile =async (event)=>{
+    SetData({...data,[event.target.name]:event.target.files[0]})
+  }
     const FormSubmit=async (reload)=>{
         reload.preventDefault();
-        console.log(data)
-        const ww=await AddProductApi(data)
+        const file=new FormData()
+        Object.keys(data).forEach(key=>file.append(key,data[key]))
+        // console.log(data)
+
+        const ww=await AddProductApi(file)
+        console.log(ww)
         if(ww.status=="success"){
             window.alert("add product successfully")
             naviget('/product')
         }
     }
+
+
 
     return(
         <>
@@ -49,7 +59,7 @@ export default function AddProduct(){
                     <label>Product Name</label>
                     <p><input type="text" placeholder="product_name" name="product_name"  onChange={handlechange}></input></p>
                     <label>Product Image</label>
-                    <p><input type="file" placeholder="uploadimg" name="product_img"  onChange={handlechange}></input></p>
+                    <p><input type="file" placeholder="uploadimg" name="product_img"  onChange={handlechangeFile}></input></p>
                     <p><button type="sumbit">sumbit</button></p>
                 </form>
              </div>

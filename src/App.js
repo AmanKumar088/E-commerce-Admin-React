@@ -14,6 +14,7 @@ import UpdateCategory from './Component/Dashbord/CategoryMain/UpdateCategory';
 import SingleSubCategory from './Component/Dashbord/SubCategory/SingleCategory';
 import UpdateSubCategory from './Component/Dashbord/SubCategory/UpdateSubCategory';
 import UpdateProduct from './Component/Dashbord/Product/UpdateProduct';
+import SingleProduct from './Component/Dashbord/Product/SingleProduct';
 function App() {
   return (
    <>
@@ -32,6 +33,7 @@ function App() {
       <Route path='/getsub/:id' element={<SingleSubCategory />}></Route>
       <Route path='/updatesub/:id' element={<UpdateSubCategory />}></Route>
       <Route path='/updateproduct/:id' element={<UpdateProduct />}></Route>
+      <Route path='/singleproduct/:id' element={<SingleProduct />}></Route>
     </Routes>
    </Router>
    </>

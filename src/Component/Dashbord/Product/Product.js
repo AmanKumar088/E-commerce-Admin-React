@@ -82,15 +82,15 @@ export default function Product() {
                   <>
 
                     <tbody>
-                      <tr style={{ fontSize: "15px" }}>
-                        <td><img src="./" width={100} height={50}></img></td>
+                      <tr style={{ fontSize: "15px",verticalAlign:"middle"}}>
+                        <td><img src={value.product_img} width={180} height={190}></img></td>
                         <td>{value.sub_category_name}</td>
                         <td>{value.product_name}</td>
                         <td>{value._id}</td>
                         <td>
                           <button id="btn"><Link style={{ textDecoration: "none", color: "#fff" }} title="update" to={`/updateproduct/:${value._id}`}><RxUpdate /></Link></button>
                           <button id="btn" style={{ backgroundColor: "red" }}><Link style={{ textDecoration: "none", color: "#fff" }} title="delete" onClick={()=>deleteProduct(value._id)}><MdDelete /></Link></button>
-                          <button id="btn"><Link style={{ textDecoration: "none", color: "#fff" }} title="view" to={``}><GrView /></Link></button>
+                          <button id="btn"><Link style={{ textDecoration: "none", color: "#fff" }} title="view" to={`/singleproduct/${value._id}`}><GrView /></Link></button>
                         </td>
                       </tr>
 

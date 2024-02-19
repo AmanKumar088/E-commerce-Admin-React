@@ -49,6 +49,7 @@ export async function SingleCategoryApi(id){
         },
         body:JSON.stringify()
     })
+    console.log(response)
     return await response.json()
 }
 

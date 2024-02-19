@@ -5,10 +5,7 @@ import { ProductRoute } from "../Component/Route/Route"
 export default async function AddProductApi(fromdata){
     const response=await fetch(`${ApiUrlProduct}${ProductRoute.productAdd}`,{
         method:"post",
-        headers:{
-            "content-type":"application/json"
-        },
-        body:JSON.stringify(fromdata)
+        body:fromdata
     })
     return await response.json()
 }
@@ -25,15 +22,15 @@ export async function AllProductApi(){
 
 }
 
-export async function SingleSubCategoryApi(id){
-   
-    const response=await fetch(`${ApiUrlProduct}${ProductRoute.productSingle}${id}`,{
+export async function SingleProductApi(id,fromData){
+    const response=await fetch(`http://localhost:200/product/single/${id}`,{
         method:"get",
         headers:{
-            "content-type":"application/json"
+            "Content-Type":"application/json"
         },
-        body:JSON.stringify()
+        body:JSON.stringify(fromData)
     })
+    console.log(response)
     return await response.json()
 }
 
